@@ -1,0 +1,58 @@
+{
+    "name": "AntimonyIQ",
+    "title": "Computer Scientist | Computer Engineer | Software Engineer | Network Engineer ",
+    "description": "As a software engineer, I excel in developing robust applications that optimize user experiences. In embedded engineering, I specialize in creating efficient and reliable systems. As a computer scientist, I explore innovative algorithms and data structures. Furthermore, as a network engineer, I design secure and scalable network architectures. Join me on this journey of innovation and technological excellence.",
+    "email": "antimonyoq@gmail.com",
+    "social": {
+        "linkedin": "https://www.linkedin.com/in/AntimonyIQ",
+        "github": "https://github.com/AntimonyIQ",
+        "twitter": "https://twitter.com/AntimonyIq"
+    },
+    "projects": [
+        {
+            "title": "Project 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "image": "project1.jpg",
+            "demo": "https://example.com/project1-demo",
+            "source": "https://github.com/johndoe/project1"
+        },
+        {
+            "title": "Project 2",
+            "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "image": "project2.jpg",
+            "demo": "https://example.com/project2-demo",
+            "source": "https://github.com/johndoe/project2"
+        }
+    ],
+    "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MongoDB"
+    ],
+    "education": [
+        {
+            "institution": "Maritime University",
+            "degree": "Bachelor of Science in Electronics Engineer"
+        }
+    ],
+    "experience": [
+        {
+            "title": "Front-end Developer",
+            "company": "ABC Company",
+            "startDate": "2018-01-01",
+            "endDate": "2020-12-31",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at leo eu risus sodales tristique."
+        },
+        {
+            "title": "Web Developer",
+            "company": "XYZ Agency",
+            "startDate": "2021-01-01",
+            "endDate": null,
+            "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+    ]
+}
+  
