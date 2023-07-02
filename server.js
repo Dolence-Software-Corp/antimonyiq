@@ -14,36 +14,39 @@ const server = http.createServer((req, res) => {
         js: 'text/javascript',
         png: 'image/png',
         jpg: 'image/jpeg',
-        pdf: 'text/pdf',
+        pdf: 'application/pdf',
+        mp3: 'audio/mpeg',
+        mp4: 'video/mp4',
+        txt: 'text/plain',
     };
 
-    const imagePath = path.join('.', 'img', url);
+    const mediaPath = path.join(__dirname, 'media', url);
+    const documentPath = path.join(__dirname, '', url);
 
-    if (ext === 'png' || ext === 'jpg') {
-        fs.readFile(imagePath, (err, imageContent) => {
-            if (err) {
-                res.writeHead(404);
-                res.end('404 Not Found');
-            } else {
-                res.setHeader('Content-Type', mimeTypes[ext]);
+    let filePath = '';
+    let contentType = '';
 
-                res.writeHead(200);
-                res.end(imageContent);
-            }
-        });
+    if (ext === 'png' || ext === 'jpg' || ext === 'mp3' || ext === 'mp4') {
+        filePath = mediaPath;
+        contentType = mimeTypes[ext];
     } else {
-        fs.readFile(`.${url}`, 'utf-8', (err, content) => {
-            if (err) {
-                res.writeHead(404);
-                res.end('404 Not Found');
-            } else {
-                res.setHeader('Content-Type', mimeTypes[ext]);
-        
-                res.writeHead(200);
-                res.end(content);
-            }
-        });
+        filePath = documentPath;
+        contentType = mimeTypes[ext] || 'application/octet-stream';
     }
+
+    fs.readFile(filePath, (err, content) => {
+        if (err) {
+            console.log('Error:', err);
+            res.writeHead(404);
+            res.end('404 Not Found');
+        } else {
+            console.log('File path:', filePath);
+            console.log('Content type:', contentType);
+            res.setHeader('Content-Type', contentType);
+            res.writeHead(200);
+            res.end(content);
+        }
+    });
 
 });
 
