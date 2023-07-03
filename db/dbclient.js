@@ -21,6 +21,10 @@ class dbclient {
         fs.writeFileSync(`${this.databaseName}.json`, data);
     }
 
+    async update() {
+        
+    }
+
     async get(collectionName, documentId) {
         const collection = this.data[collectionName];
         if (!collection) {

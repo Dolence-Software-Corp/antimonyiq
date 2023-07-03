@@ -1,6 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const ip = require('./utils/ip');
+const journal = require('./utils/filelogger');
+const source = 'Server';
 
 const server = http.createServer((req, res) => {
     const splitUrlFromQuery = req.url.split('?');
@@ -36,12 +39,15 @@ const server = http.createServer((req, res) => {
 
     fs.readFile(filePath, (err, content) => {
         if (err) {
-            console.log('Error:', err);
+            const message = err.message;
+            journal(message, source);
             res.writeHead(404);
             res.end('404 Not Found');
         } else {
-            console.log('File path:', filePath);
-            console.log('Content type:', contentType);
+            const message1 = 'File path: ' + filePath;
+            const message2 = 'Content type: ' + contentType;
+            journal(message1, source);
+            journal(message2, source);
             res.setHeader('Content-Type', contentType);
             res.writeHead(200);
             res.end(content);
@@ -51,6 +57,8 @@ const server = http.createServer((req, res) => {
 });
 
 const port = 3100;
-server.listen(port, '0.0.0.0', () => {
+server.listen(port, ip, () => {
+    const message = `Server running on http://localhost:${port}`;
+    journal(message, source);
     console.log(`Server running on http://localhost:${port}`);
 });
