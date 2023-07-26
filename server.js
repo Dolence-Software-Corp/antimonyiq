@@ -56,7 +56,7 @@ const server = http.createServer((req, res) => {
 
 });
 
-const port = 3100;
+const port = 3000;
 server.listen(port, ip, () => {
     const message = `Server running on http://localhost:${port}`;
     journal(message, source);
