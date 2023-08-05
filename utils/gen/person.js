@@ -53,6 +53,6 @@ async function generatePerson() {
     return Person;
 }
 
-module.exports = {
+export default {
     generatePerson
 };

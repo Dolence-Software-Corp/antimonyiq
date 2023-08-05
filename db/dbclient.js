@@ -1,4 +1,4 @@
-const fs = require('fs');
+import { readFileSync, writeFileSync } from 'fs';
 
 class dbclient {
     constructor(databaseName) {
@@ -8,7 +8,7 @@ class dbclient {
 
     async load() {
         try {
-            const data = fs.readFileSync(`${this.databaseName}.json`, 'utf8');
+            const data = readFileSync(`${this.databaseName}.json`, 'utf8');
             this.data = JSON.parse(data);
         } catch (error) {
             // If the file doesn't exist or there's an error reading it, assume an empty database
@@ -18,7 +18,7 @@ class dbclient {
 
     async save() {
         const data = JSON.stringify(this.data, null, 2);
-        fs.writeFileSync(`${this.databaseName}.json`, data);
+        writeFileSync(`${this.databaseName}.json`, data);
     }
 
     async update() {
@@ -52,4 +52,4 @@ class dbclient {
     }
 }
 
-module.exports = dbclient;
+export default dbclient;

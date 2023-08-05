@@ -4,6 +4,8 @@ const path = require('path');
 const ip = require('./utils/ip');
 const journal = require('./utils/filelogger');
 const source = 'Server';
+// let uuid = new DeviceUUID().get();
+// let du = new DeviceUUID().parse();
 
 const server = http.createServer((req, res) => {
     const splitUrlFromQuery = req.url.split('?');
@@ -58,7 +60,7 @@ const server = http.createServer((req, res) => {
 
 const port = 3100;
 server.listen(port, ip, () => {
-    const message = `Server running on http://localhost:${port}`;
+    const message = `Server running on http://${ip}:${port}`;
     journal(message, source);
-    console.log(`Server running on http://localhost:${port}`);
+    console.log(`Server running on http://${ip}:${port}`);
 });

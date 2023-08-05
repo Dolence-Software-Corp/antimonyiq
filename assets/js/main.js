@@ -1,5 +1,21 @@
-const db = require('../../db');
+let du = new DeviceUUID().parse();
+console.log(du.browser);
 
+/**
+ * Adds codes that needs fixes:
+ * - https://github.com/AntimonyIQ
+ * 
+ * @param
+ * let uuid = new DeviceUUID().get();
+ *   let du = new DeviceUUID().parse();
+
+ *   const message = du.browser;
+ *  journal(message, 'empty source');
+ * 
+ * //////////// others ////////////
+ * 
+const db = require('../../db');
+const journal = require('./utils/filelogger');
 
 async function fetchPortfolioData() {
     try {
@@ -11,7 +27,7 @@ async function fetchPortfolioData() {
     }
 }
 
-async function addProject(data) {
+async function addProject() {
     const dbclient = new db('projects');
     dbclient.load();
 
@@ -34,8 +50,6 @@ async function addProject(data) {
 
     dbclient.save();
 }
-
-
-addProject();
-// fetchPortfolioData();
-  
+ * 
+ * //////////////////////////////////
+ */
