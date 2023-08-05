@@ -1,20 +1,20 @@
 {
-    "name": "antimonyiq",
-    "version": "1.0.0",
-    "description": "AntimonyIQ: Computer Scientist | Computer Engineer | Software Engineer | Network Engineer",
-    "main": "main.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
-    },
-    "keywords": [
-        "server",
-        "Computer Scientist",
-        "Computer Engineer",
-        "Computer Administrator",
-        "Software Engineer",
-        "Network Engineer" 
-    ],
-    "author": "AntimonyIQ",
-    "license": "ISC"
+  "name": "antimonyiq",
+  "version": "1.0.0",
+  "description": "AntimonyIQ: Computer Scientist | Computer Engineer | Software Engineer | Network Engineer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "server",
+    "Computer Scientist",
+    "Computer Engineer",
+    "Computer Administrator",
+    "Software Engineer",
+    "Network Engineer" 
+  ],
+  "author": "AntimonyIQ",
+  "license": "ISC"
 }
