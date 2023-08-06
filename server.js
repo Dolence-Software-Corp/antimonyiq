@@ -3,11 +3,24 @@ const fs = require('fs');
 const path = require('path');
 const ip = require('./utils/ip');
 const journal = require('./utils/filelogger');
+const { SitemapStream, streamToPromise } = require('sitemap');
 const source = 'Server';
-// let uuid = new DeviceUUID().get();
-// let du = new DeviceUUID().parse();
 
-const server = http.createServer((req, res) => {
+async function generateSitemap() {
+    const sitemap = new SitemapStream({ hostname: `http://${ip}:${port}` }); // Update the hostname
+    // Add URLs to the sitemap
+    sitemap.write({ url: '/', changefreq: 'weekly', priority: 1 });
+    sitemap.write({ url: '/projects', changefreq: 'monthly', priority: 0.8 });
+    sitemap.write({ url: '/research', changefreq: 'monthly', priority: 0.8 });
+    sitemap.write({ url: '/blog', changefreq: 'monthly', priority: 0.8 });
+    // Add more URLs here
+    sitemap.end();
+
+    const xml = await streamToPromise(sitemap).then(data => data.toString());
+    return xml;
+}
+
+const server = http.createServer(async (req, res) => {
     const splitUrlFromQuery = req.url.split('?');
     const cleanUrl = splitUrlFromQuery[0];
     const url = cleanUrl === '/' ? '/index.html' : req.url;
@@ -56,11 +69,26 @@ const server = http.createServer((req, res) => {
         }
     });
 
+    // Handle sitemap request
+    if (cleanUrl === '/sitemap.xml') {
+        try {
+            const sitemapXml = await generateSitemap();
+            res.setHeader('Content-Type', 'application/xml');
+            res.writeHead(200);
+            res.end(sitemapXml);
+        } catch (error) {
+            journal(error.message, source);
+            res.writeHead(500);
+            res.end('500 Internal Server Error');
+        }
+        return;
+    }
+
 });
 
 const port = 3000;
 server.listen(port, ip, () => {
     const message = `Server running on http://${ip}:${port}`;
     journal(message, source);
-    console.log(`Server running on http://${ip}:${port}`);
+    console.log(message);
 });

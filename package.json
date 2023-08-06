@@ -13,8 +13,11 @@
         "Computer Engineer",
         "Computer Administrator",
         "Software Engineer",
-        "Network Engineer" 
+        "Network Engineer"
     ],
     "author": "AntimonyIQ",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "sitemap": "^7.1.1"
+    }
 }
