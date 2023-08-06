@@ -4,6 +4,8 @@ const path = require('path');
 const ip = require('./utils/ip');
 const journal = require('./utils/filelogger');
 const { SitemapStream, streamToPromise } = require('sitemap');
+const url = require('url');
+
 const source = 'Server';
 
 async function generateSitemap() {
@@ -13,7 +15,6 @@ async function generateSitemap() {
     sitemap.write({ url: '/projects', changefreq: 'monthly', priority: 0.8 });
     sitemap.write({ url: '/research', changefreq: 'monthly', priority: 0.8 });
     sitemap.write({ url: '/blog', changefreq: 'monthly', priority: 0.8 });
-    // Add more URLs here
     sitemap.end();
 
     const xml = await streamToPromise(sitemap).then(data => data.toString());
@@ -56,8 +57,23 @@ const server = http.createServer(async (req, res) => {
         if (err) {
             const message = err.message;
             journal(message, source);
-            res.writeHead(404);
-            res.end('404 Not Found');
+
+            // Serve 404 error page
+            if (err.code === 'ENOENT') {
+                const notFoundPage = path.join(__dirname, 'error', '404', 'index.html');
+                fs.readFile(notFoundPage, (err, notFoundContent) => {
+                    if (err) {
+                        res.writeHead(500);
+                        res.end('500 Internal Server Error');
+                    } else {
+                        res.writeHead(404, { 'Content-Type': 'text/html' });
+                        res.end(notFoundContent);
+                    }
+                });
+            } else {
+                res.writeHead(500);
+                res.end('500 Internal Server Error');
+            }
         } else {
             const message1 = 'File path: ' + filePath;
             const message2 = 'Content type: ' + contentType;

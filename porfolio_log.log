@@ -1028,3 +1028,21 @@
 8/6/2023 7:43:41 PM (Server): Content type: application/octet-stream
 8/6/2023 7:43:43 PM (Server): Content type: application/octet-stream
 8/6/2023 7:43:43 PM (Server): File path: C:\Projects\antimonyiq\website\favicon.ico
+8/6/2023 7:53:36 PM (Server): Server running on http://192.168.8.189:3000
+8/6/2023 7:54:02 PM (Server): File path: C:\Projects\antimonyiq\website\index.html
+8/6/2023 7:54:02 PM (Server): Content type: text/html
+8/6/2023 7:54:02 PM (Server): File path: C:\Projects\antimonyiq\website\assets\css\style.css
+8/6/2023 7:54:02 PM (Server): Content type: text/css
+8/6/2023 7:54:02 PM (Server): File path: C:\Projects\antimonyiq\website\assets\js\main.js
+8/6/2023 7:54:02 PM (Server): File path: C:\Projects\antimonyiq\website\libs\uuid.js
+8/6/2023 7:54:02 PM (Server): Content type: text/javascript
+8/6/2023 7:54:02 PM (Server): Content type: text/javascript
+8/6/2023 7:54:04 PM (Server): File path: C:\Projects\antimonyiq\website\assets\css\print.css
+8/6/2023 7:54:04 PM (Server): Content type: text/css
+8/6/2023 7:54:06 PM (Server): File path: C:\Projects\antimonyiq\website\favicon.ico
+8/6/2023 7:54:06 PM (Server): Content type: application/octet-stream
+8/6/2023 7:54:08 PM (Server): File path: C:\Projects\antimonyiq\website\favicon.ico
+8/6/2023 7:54:08 PM (Server): Content type: application/octet-stream
+8/6/2023 7:54:10 PM (Server): ENOENT: no such file or directory, open 'C:\Projects\antimonyiq\website\tr'
+8/6/2023 7:54:40 PM (Server): ENOENT: no such file or directory, open 'C:\Projects\antimonyiq\website\error'
+8/6/2023 7:54:53 PM (Server): ENOENT: no such file or directory, open 'C:\Projects\antimonyiq\website\error\404'
