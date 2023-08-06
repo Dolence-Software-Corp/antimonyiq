@@ -1,5 +1,4 @@
-let du = new DeviceUUID().parse();
-console.log(du.browser);
+
 
 /**
  * Adds codes that needs fixes:
