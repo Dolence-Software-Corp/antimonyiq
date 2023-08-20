@@ -23,9 +23,10 @@ async function generateSitemap() {
 
 const server = http.createServer(async (req, res) => {
     const splitUrlFromQuery = req.url.split('?');
+
     const cleanUrl = splitUrlFromQuery[0];
-    const url = cleanUrl === '/' ? '/index.html' : req.url;
-    const ext = path.extname(url).substring(1);
+    const urlPath = cleanUrl === '/' ? '/index.html' : req.url;
+    const ext = path.extname(urlPath).substring(1);
 
     const mimeTypes = {
         html: 'text/html',
@@ -39,8 +40,8 @@ const server = http.createServer(async (req, res) => {
         txt: 'text/plain',
     };
 
-    const mediaPath = path.join(__dirname, 'media', url);
-    const documentPath = path.join(__dirname, '', url);
+    const mediaPath = path.join(__dirname, 'media', urlPath); 
+    const documentPath = path.join(__dirname, '', urlPath);
 
     let filePath = '';
     let contentType = '';
@@ -48,6 +49,9 @@ const server = http.createServer(async (req, res) => {
     if (ext === 'png' || ext === 'jpg' || ext === 'mp3' || ext === 'mp4') {
         filePath = mediaPath;
         contentType = mimeTypes[ext];
+    } else if (ext === '') {
+        filePath = path.join(documentPath, 'index.html');
+        contentType = 'text/html';
     } else {
         filePath = documentPath;
         contentType = mimeTypes[ext] || 'application/octet-stream';
@@ -85,7 +89,6 @@ const server = http.createServer(async (req, res) => {
         }
     });
 
-    // Handle sitemap request
     if (cleanUrl === '/sitemap.xml') {
         try {
             const sitemapXml = await generateSitemap();

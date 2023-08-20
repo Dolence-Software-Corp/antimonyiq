@@ -160,7 +160,7 @@ h1 {
 .container a:hover:after,
 .container a:focus:before,
 .container a:focus:after {
-    width: 90%;
+    width: 95%;
 }
 
 .rotate-45 {
