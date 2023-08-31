@@ -1223,3 +1223,40 @@
 8/30/2023 9:46:49 PM (Server): File path: C:\Projects\antimonyiq\website\favicon.ico
 8/30/2023 9:46:49 PM (Server): Content type: application/octet-stream
 8/30/2023 9:47:36 PM (Server): Server running on http://172.26.208.1:3000
+8/31/2023 10:31:31 PM (Server): Server running on http://172.29.32.1:3000
+8/31/2023 10:32:25 PM (Server): File path: C:\Projects\antimonyiq\website\index.html
+8/31/2023 10:32:25 PM (Server): Content type: text/html
+8/31/2023 10:32:25 PM (Server): File path: C:\Projects\antimonyiq\website\assets\css\style.css
+8/31/2023 10:32:25 PM (Server): Content type: text/css
+8/31/2023 10:32:25 PM (Server): File path: C:\Projects\antimonyiq\website\libs\uuid.js
+8/31/2023 10:32:25 PM (Server): Content type: text/javascript
+8/31/2023 10:32:26 PM (Server): File path: C:\Projects\antimonyiq\website\assets\js\main.js
+8/31/2023 10:32:26 PM (Server): Content type: text/javascript
+8/31/2023 10:32:28 PM (Server): File path: C:\Projects\antimonyiq\website\assets\css\print.css
+8/31/2023 10:32:28 PM (Server): Content type: text/css
+8/31/2023 10:32:28 PM (Server): File path: C:\Projects\antimonyiq\website\favicon.ico
+8/31/2023 10:32:28 PM (Server): Content type: application/octet-stream
+8/31/2023 10:32:31 PM (Server): File path: C:\Projects\antimonyiq\website\favicon.ico
+8/31/2023 10:32:31 PM (Server): Content type: application/octet-stream
+8/31/2023 10:32:32 PM (Server): File path: C:\Projects\antimonyiq\website\manifest.json
+8/31/2023 10:32:32 PM (Server): Content type: application/octet-stream
+8/31/2023 10:32:58 PM (Server): Server running on http://172.29.32.1:3000
+8/31/2023 10:33:06 PM (Server): File path: C:\Projects\antimonyiq\website\index.html
+8/31/2023 10:33:06 PM (Server): Content type: text/html
+8/31/2023 10:33:07 PM (Server): File path: C:\Projects\antimonyiq\website\assets\js\main.js
+8/31/2023 10:33:07 PM (Server): Content type: text/javascript
+8/31/2023 10:33:07 PM (Server): Content type: text/javascript
+8/31/2023 10:33:07 PM (Server): File path: C:\Projects\antimonyiq\website\assets\css\style.css
+8/31/2023 10:33:07 PM (Server): Content type: text/css
+8/31/2023 10:33:07 PM (Server): File path: C:\Projects\antimonyiq\website\libs\uuid.js
+8/31/2023 10:33:09 PM (Server): File path: C:\Projects\antimonyiq\website\assets\css\print.css
+8/31/2023 10:33:09 PM (Server): Content type: text/css
+8/31/2023 10:33:09 PM (Server): File path: C:\Projects\antimonyiq\website\favicon.ico
+8/31/2023 10:33:09 PM (Server): Content type: application/octet-stream
+8/31/2023 10:33:16 PM (Server): File path: C:\Projects\antimonyiq\website\favicon.ico
+8/31/2023 10:33:16 PM (Server): Content type: application/octet-stream
+8/31/2023 10:33:38 PM (Server): ENOENT: no such file or directory, open 'C:\Projects\antimonyiq\website\blog\index.html'
+8/31/2023 10:34:16 PM (Server): File path: C:\Projects\antimonyiq\website\blog\index.html
+8/31/2023 10:34:16 PM (Server): Content type: text/html
+8/31/2023 10:34:19 PM (Server): File path: C:\Projects\antimonyiq\website\favicon.ico
+8/31/2023 10:34:19 PM (Server): Content type: application/octet-stream
