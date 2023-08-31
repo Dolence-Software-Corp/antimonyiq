@@ -105,8 +105,8 @@ const server = http.createServer(async (req, res) => {
 
 });
 
-const port = 3000;
-server.listen(port, ip, () => {
+const port = 3000; 
+server.listen(port, '0.0.0.0', () => {
     const message = `Server running on http://${ip}:${port}`;
     journal(message, source);
     console.log(message);

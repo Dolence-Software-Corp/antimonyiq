@@ -2,34 +2,20 @@
 const { networkInterfaces } = require('os');
 
 const interfaces = networkInterfaces();
-const results = Object.create(null);
+const results = [];
 
 const osType = process.platform;
 
-// Network interface names for different operating systems
-const interfaceNames = {
-    win32: ['Wi-Fi', 'Ethernet'],
-    darwin: ['en0'],
-    linux: ['eth0'],
-};
-
-const supportedInterfaces = interfaceNames[osType];
-
-if (supportedInterfaces) {
+if (osType === 'win32' || osType === 'darwin' || osType === 'linux') {
     for (const name of Object.keys(interfaces)) {
-        if (supportedInterfaces.some((interfaceName) => name.includes(interfaceName))) {
-            for (const net of interfaces[name]) {
-                const family = net.family === 'IPv4' ? 'IPv4' : 4;
-                if (net.family === family && !net.internal) {
-                    if (!results[name]) {
-                        results[name] = [];
-                    }
-                    results[name].push(net.address);
-                }
+        for (const net of interfaces[name]) {
+            const family = net.family === 'IPv4' ? 'IPv4' : 4;
+            if (net.family === family && !net.internal && net.cidr !== '127.0.0.1') {
+                results.push(net.address);
             }
         }
     }
 }
 
-const ans = supportedInterfaces ? results[supportedInterfaces[0]] || [] : [];
-module.exports = ans.length > 0 ? ans[0] : 'localhost';
+const ans = results.length > 0 ? results[0] : 'localhost';
+module.exports = ans;
